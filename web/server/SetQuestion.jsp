@@ -4,14 +4,29 @@
     Author     : thinkredstone
 --%>
 
+<%@page import="java.util.Set"%>
+<%@page import="mechanics.Question"%>
+<%@page import="loading.QuestionLoader"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title></title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+            if (application.getAttribute(Constants.QUESTIONS) == null) {
+                QuestionLoader ql = new QuestionLoader();
+                application.setAttribute(Constants.QUESTIONS, ql.loadQuestions());
+            }
+            Set<Question> qs = (Set<Question>) application.getAttribute(Constants.QUESTIONS);
+            for (Question q : qs) {
+                if (!q.isPlayed()) {
+                    q.setPlayed(true);
+                    application.setAttribute(Constants.CURRENTQ, q);
+                }
+            }
+        %>
     </body>
 </html>
