@@ -16,7 +16,8 @@ public class Question {
     private final String question;
     private final Answer rightAnswer;
     private Set<UserAnswer> userAnswers;
-
+    private boolean played = false;
+    
     public Question(String question ,Answer rightAnswer, Set<UserAnswer> userAnswers) {
         this.question = question;
         this.rightAnswer = rightAnswer;
@@ -56,4 +57,14 @@ public class Question {
             }
         }
     }
+
+    public boolean isPlayed() {
+        return played;
+    }
+
+    public void setPlayed(boolean played) {
+        this.played = played;
+    }
+    
+    
 }
