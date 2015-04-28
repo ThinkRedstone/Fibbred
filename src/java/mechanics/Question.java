@@ -13,17 +13,19 @@ import java.util.Set;
  * @author thinkredstone
  */
 public class Question {
-
+    private final String question;
     private final Answer rightAnswer;
     private Set<UserAnswer> userAnswers;
 
-    public Question(Answer rightAnswer, Set<UserAnswer> userAnswers) {
+    public Question(String question ,Answer rightAnswer, Set<UserAnswer> userAnswers) {
+        this.question = question;
         this.rightAnswer = rightAnswer;
         this.userAnswers = userAnswers;
         checkAnsewers();
     }
     
-    public Question(Answer rightAnswer){
+    public Question(String question , Answer rightAnswer){
+        this.question = question;
         this.rightAnswer = rightAnswer;
     }
     
