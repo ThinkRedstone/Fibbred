@@ -4,6 +4,7 @@
     Author     : thinkredstone
 --%>
 
+<%@page import="vars.Vars"%>
 <%@page import="java.util.Set"%>
 <%@page import="mechanics.Question"%>
 <%@page import="loading.QuestionLoader"%>
@@ -16,19 +17,33 @@
     </head>
     <body>
         <%
-            if (application.getAttribute(Constants.QUESTIONS) == null) {
+            if (application.getAttribute(Vars.QUESTIONS) == null) {
                 QuestionLoader ql = new QuestionLoader();
-                application.setAttribute(Constants.QUESTIONS, ql.loadQuestions());
+                application.setAttribute(Vars.QUESTIONS, ql.loadQuestions());
             }
-            Set<Question> qs = (Set<Question>) application.getAttribute(Constants.QUESTIONS);
+            Set<Question> qs = (Set<Question>) application.getAttribute(Vars.QUESTIONS);
             for (Question q : qs) {
                 if (!q.isPlayed()) {
                     q.setPlayed(true);
-                    application.setAttribute(Constants.CURRENTQ, q);
-                }%>
-        <h1><%=q.question%></h1>
-        <%
+                    application.setAttribute(Vars.CURRENTQ, q);
+                }
+        %> 
+        <h1><%=q.question%></h1> 
+        <% }%>
+        <div id="time"></div>
+        <script>
+            var time = 15;
+            function countdown() {
+                document.getElementById("time").innerHTML = time;
+                time--;
             }
-        %>
+            setInterval(function () {
+                countdown();
+            }, 1000);
+            setTimeout(function () {
+            window.location = "../index.html"; //put redirect loaction
+            }
+            , (time + 1 * 1000);
+        </script>
     </body>
 </html>
