@@ -10,15 +10,15 @@ package mechanics;
  * @author thinkredstone
  */
 public class UserAnswer extends Answer{
-    private final String usename;
+    private final User username;
 
-    public UserAnswer(String answer, String username) {
+    public UserAnswer(String answer, User username) {
         super(answer);
-        this.usename = username;
+        this.username = username;
     }
 
-    public String getUsename() {
-        return usename;
+    public User getUsername() {
+        return username;
     }
     
 }
