@@ -25,7 +25,9 @@
                 if (!q.isPlayed()) {
                     q.setPlayed(true);
                     application.setAttribute(Constants.CURRENTQ, q);
-                }
+                }%>
+        <h1><%=q.question%></h1>
+        <%
             }
         %>
     </body>
