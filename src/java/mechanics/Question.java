@@ -13,7 +13,7 @@ import java.util.Set;
  * @author thinkredstone
  */
 public class Question {
-    private final String question;
+    public final String question;
     private final Answer rightAnswer;
     private Set<UserAnswer> userAnswers;
     private boolean played = false;
