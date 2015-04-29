@@ -10,7 +10,7 @@ package mechanics;
  * @author thinkredstone
  */
 public class User {
-    private final String username;
+    public final String username;
     private int score = 0;
 
     public User(String username) {
