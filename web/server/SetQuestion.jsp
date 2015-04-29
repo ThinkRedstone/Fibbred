@@ -43,7 +43,7 @@
             setTimeout(function () {
             window.location = "../index.html"; //put redirect loaction
             }
-            , (time + 1 * 1000);
+            , (time + 1) * 1000);
         </script>
     </body>
 </html>
