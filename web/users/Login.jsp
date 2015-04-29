@@ -4,6 +4,7 @@
     Author     : thinkredstone
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page import="mechanics.User"%>
 <%@page import="vars.Vars"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,11 +22,16 @@
         </form>
         <%} else {
             session.setAttribute(Vars.USER, new User(request.getParameter("username")));
+            if (application.getAttribute(Vars.AUSERS) == null) {
+                application.setAttribute(Vars.AUSERS, new ArrayList<User>());
+            }
+            ((ArrayList<User>) application.getAttribute(Vars.AUSERS)).add((User) session.getAttribute(Vars.USER));
+
         %>
         <script>
             window.location = "";//TODO: redirect
         </script>
-        
+
         <%}%>
     </body>
 </html>

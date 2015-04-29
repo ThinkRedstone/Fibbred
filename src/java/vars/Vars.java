@@ -15,5 +15,6 @@ public class Vars {
     public static final String USER = "user";
     public static final String CURRENTQ = "q";
     public static final String ANSWERS = "a";
+    public static final String AUSERS = "us";//array of all users used to track score
     
 }
