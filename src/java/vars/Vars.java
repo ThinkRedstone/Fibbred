@@ -14,5 +14,6 @@ public class Vars {
     public static final String QUESTIONS = "qs";
     public static final String USER = "user";
     public static final String CURRENTQ = "q";
+    public static final String ANSWERS = "a";
     
 }
