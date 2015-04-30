@@ -13,24 +13,30 @@ import java.util.Set;
  * @author thinkredstone
  */
 public class Question {
+
     public final String question;
     private final Answer rightAnswer;
     private Set<UserAnswer> userAnswers;
     private boolean played = false;
-    
-    public Question(String question ,Answer rightAnswer, Set<UserAnswer> userAnswers) {
+
+    public Question(String question, Answer rightAnswer, Set<UserAnswer> userAnswers) {
         this.question = question;
         this.rightAnswer = rightAnswer;
         this.userAnswers = userAnswers;
         checkAnsewers();
     }
-    
-    public Question(String question , Answer rightAnswer){
+
+    public Question(String question, Answer rightAnswer) {
         this.question = question;
         this.rightAnswer = rightAnswer;
     }
-    
-    private void checkAnsewers(){
+
+    public void addAnswer(UserAnswer answer) {
+        userAnswers.add(answer);
+        checkAnsewers();
+    }
+
+    private void checkAnsewers() {
         for (UserAnswer a : userAnswers) {
             if (a.answer.equals(rightAnswer.answer)) {
                 this.userAnswers.remove(a);
@@ -65,6 +71,5 @@ public class Question {
     public void setPlayed(boolean played) {
         this.played = played;
     }
-    
-    
+
 }

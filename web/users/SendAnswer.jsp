@@ -4,6 +4,8 @@
     Author     : thinkredstone
 --%>
 
+<%@page import="mechanics.Question"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="mechanics.User"%>
 <%@page import="mechanics.UserAnswer"%>
 <%@page import="mechanics.Answer"%>
@@ -23,7 +25,8 @@
             <input type="submit" value="Submit" />
         </form>
         <%} else {
-            application.setAttribute(Vars.ANSWERS, new UserAnswer(request.getParameter("answer"), (User)session.getAttribute(Vars.USER)));
-        }%>
+                ((Question) application.getAttribute(Vars.CURRENTQ)).addAnswer(new UserAnswer(request.getParameter("answer"), (User) session.getAttribute(Vars.USER)));
+            }
+        %>
     </body>
 </html>
