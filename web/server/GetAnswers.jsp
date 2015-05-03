@@ -30,8 +30,10 @@
                     for (int i = 0; i < amountPerLine; i++) {
                         counter++;
                         if (it.hasNext()) {
+                            Answer a = it.next();
+                            a.setId(counter);
                 %>
-                <td><%=(counter + it.next().getAnswer())%></td>
+                <td><%=(counter +". " +a.getAnswer())%></td>
                 <%
                 } else {
                 %>
