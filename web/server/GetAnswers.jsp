@@ -21,16 +21,17 @@
             <%
                 Question q = (Question) application.getAttribute(Vars.CURRENTQ);
                 int amountPerLine = 3;
-                int buffer = q.getAnswers().size() / amountPerLine;
+                int counter = 0;
                 Iterator<Answer> it = q.getAnswers().iterator();
                 while (it.hasNext()) {
             %>
             <tr>
                 <%
                     for (int i = 0; i < amountPerLine; i++) {
+                        counter++;
                         if (it.hasNext()) {
                 %>
-                <td><%=it.next()%></td>
+                <td><%=(counter + it.next().getAnswer())%></td>
                 <%
                 } else {
                 %>
