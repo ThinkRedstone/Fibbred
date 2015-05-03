@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Answer {
 
     protected final String answer;
-    protected ArrayList<String> gusssers = new ArrayList<>();
+    protected ArrayList<User> gusssers = new ArrayList<>();
     private int id;
 
     public int getId() {
@@ -33,15 +33,15 @@ public class Answer {
         return answer;
     }
 
-    public ArrayList<String> getGusssers() {
+    public ArrayList<User> getGusssers() {
         return gusssers;
     }
 
-    public void setGusssers(ArrayList<String> gusssers) {
+    public void setGusssers(ArrayList<User> gusssers) {
         this.gusssers = gusssers;
     }
 
-    public void addGussser(String userName) {
+    public void addGussser(User userName) {
         this.gusssers.add(userName);
     }
 
