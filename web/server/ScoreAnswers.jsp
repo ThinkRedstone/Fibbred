@@ -30,21 +30,12 @@
                 application.setAttribute(vars.Vars.CURRENTQ, null);
             %>
         </table>
-        <% if (request.getParameter("final") != null) {%>
         <script>
-            var time = 15;
-            function countdown() {
-//                    document.getElementById("time").innerHTML = time;
-                time--;
-            }
-            setInterval(function () {
-                countdown();
-            }, 1000);
+            var time = 10;
             setTimeout(function () {
                 window.location = "SetQuestion.jsp"; 
             }
             , (time + 1) * 1000);
         </script>
-        <%}%>
     </body>
 </html>
