@@ -9,6 +9,9 @@ package vars;
 /**
  *
  * @author thinkredstone
+ * all the application and session attributes used 
+ * by the site. Refers to application unless 
+ * specified otherwise.
  */
 public class Vars {
     public static final String QUESTIONS = "qs";
