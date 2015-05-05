@@ -15,7 +15,7 @@
         <title>Score</title>
     </head>
     <body style="text-align: center;direction: rtl">
-        <h1>The score: </h1>
+        <h1>הניקוד:</h1>
         <table>
             <%
                 ((Question) application.getAttribute(vars.Vars.CURRENTQ)).scoreAnswers();

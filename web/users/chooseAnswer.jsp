@@ -32,7 +32,7 @@
         <%} else {
                 Question q = (Question) application.getAttribute(Vars.CURRENTQ);
                 for (Answer a : q.getAnswers()) {
-                    if (a.getId() == Integer.valueOf(request.getParameter("number"))) {
+                    if (a.getId() == Integer.valueOf(request.getParameter("answer"))) {
                         a.addGussser((User) session.getAttribute(Vars.USER));
                     }
                 }
@@ -52,5 +52,6 @@
             }
             , (time + 1) * 1000);
         </script>
+        <%}%>
     </body>
 </html>
