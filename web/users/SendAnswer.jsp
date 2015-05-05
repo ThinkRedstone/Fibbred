@@ -18,6 +18,13 @@
         <title>Answer now!</title>
     </head>
     <body>
+        <% if (application.getAttribute(vars.Vars.CURRENTQ) == null) {%>
+        <script>
+            setTimeout(function () {
+                window.location = "SendAnswer.jsp";
+            }, 1000)
+        </script>
+        <%} else {%>
         <%if (request.getParameter("answer") == null || request.getParameter("answer").equals("")) {%>
         <h1>Write your answer!</h1>
         <form action="SendAnswer.jsp">
@@ -25,9 +32,9 @@
             <input type="submit" value="Submit" />
         </form>
         <%} else {
-                ((Question) application.getAttribute(Vars.CURRENTQ)).addAnswer(new UserAnswer(request.getParameter("answer"), (User) session.getAttribute(Vars.USER)));
+                    ((Question) application.getAttribute(Vars.CURRENTQ)).addAnswer(new UserAnswer(request.getParameter("answer"), (User) session.getAttribute(Vars.USER)));
+                }
             }
         %>
-        <!--TODO: add redirect-->
     </body>
 </html>

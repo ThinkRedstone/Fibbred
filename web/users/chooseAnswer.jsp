@@ -30,6 +30,7 @@
                     }
                 }
             }%>
+            <div id="time"></div>
         <script>
             var time = 15;
             function countdown() {
