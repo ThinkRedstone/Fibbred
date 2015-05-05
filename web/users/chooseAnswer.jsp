@@ -17,6 +17,13 @@
     </head>
     <body>
         <h1>Choose the right answer!</h1>
+        <% if (!((Question) application.getAttribute(Vars.CURRENTQ)).isReady()) {%>
+        <script>
+            setTimeout(function () {
+                window.location = "chooseAnswer.jsp";
+            }, 1000)
+        </script>
+        <%} else {%>
         <% if (request.getParameter("answer") == null || request.getParameter("answer") == "") {%>
         <form action="chooseAnswer.jsp">
             <input type="number" name="answer" value="" />
@@ -30,7 +37,7 @@
                     }
                 }
             }%>
-            <div id="time"></div>
+        <div id="time"></div>
         <script>
             var time = 15;
             function countdown() {

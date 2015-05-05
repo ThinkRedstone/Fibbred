@@ -20,6 +20,7 @@
         <table>
             <%
                 Question q = (Question) application.getAttribute(Vars.CURRENTQ);
+                q.setReady(true);
                 int amountPerLine = 3;
                 int counter = 0;
                 Iterator<Answer> it = q.getAnswers().iterator();
