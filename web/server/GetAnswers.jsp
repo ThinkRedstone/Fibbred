@@ -16,7 +16,7 @@
         <title>Choose an answer!</title>
     </head>
     <body style="text-align: center;direction: rtl">
-        <h1>Choose an answer!</h1>
+        <h1>בחר תשובה!</h1>
         <table>
             <%
                 Question q = (Question) application.getAttribute(Vars.CURRENTQ);
