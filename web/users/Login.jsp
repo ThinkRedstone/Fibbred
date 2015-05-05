@@ -29,7 +29,7 @@
 
         %>
         <script>
-            window.location = "";//TODO: redirect
+            window.location = "SendAnswer.jsp";//: redirect
         </script>
 
         <%}%>

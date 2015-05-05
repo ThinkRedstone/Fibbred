@@ -28,5 +28,6 @@
                 ((Question) application.getAttribute(Vars.CURRENTQ)).addAnswer(new UserAnswer(request.getParameter("answer"), (User) session.getAttribute(Vars.USER)));
             }
         %>
+        <!--TODO: add redirect-->
     </body>
 </html>

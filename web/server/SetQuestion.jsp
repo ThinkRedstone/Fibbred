@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
     </head>
-    <body>
+    <body style="text-align: center">
         <%
             if (application.getAttribute(Vars.QUESTIONS) == null) {
                 QuestionLoader ql = new QuestionLoader();
@@ -30,7 +30,7 @@
         %> 
         <h1><%=q.question%></h1> 
         <% }%>
-        <div id="time"></div>
+        <div id="time" style="text-align: center"></div>
         <script>
             var time = 15;
             function countdown() {
@@ -41,7 +41,7 @@
                 countdown();
             }, 1000);
             setTimeout(function () {
-            window.location = "../index.html"; //put redirect loaction
+            window.location = "GetAnswers.jsp"; 
             }
             , (time + 1) * 1000);
         </script>

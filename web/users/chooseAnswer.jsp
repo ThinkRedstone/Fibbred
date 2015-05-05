@@ -30,5 +30,19 @@
                     }
                 }
             }%>
+        <script>
+            var time = 15;
+            function countdown() {
+                document.getElementById("time").innerHTML = time;
+                time--;
+            }
+            setInterval(function () {
+                countdown();
+            }, 1000);
+            setTimeout(function () {
+                window.location = "SendAnswer.jsp"; //: put redirect loaction
+            }
+            , (time + 1) * 1000);
+        </script>
     </body>
 </html>

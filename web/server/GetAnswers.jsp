@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Choose an answer!</title>
     </head>
-    <body>
+    <body style="text-align: center">
         <h1>Choose an answer!</h1>
         <table>
             <%
@@ -33,7 +33,7 @@
                             Answer a = it.next();
                             a.setId(counter);
                 %>
-                <td><%=(counter +". " +a.getAnswer())%></td>
+                <td><%=(counter + ". " + a.getAnswer())%></td>
                 <%
                 } else {
                 %>
@@ -47,5 +47,20 @@
                 }
             %>
         </table>
+            <div id="time" style="text-align: center"></div>
+            <script>
+                var time = 15;
+                function countdown() {
+                    document.getElementById("time").innerHTML = time;
+                    time--;
+                }
+                setInterval(function () {
+                    countdown();
+                }, 1000);
+                setTimeout(function () {
+                    window.location = "../ScoreAnswers.jsp";
+                }
+                , (time + 1) * 1000);
+            </script>
     </body>
 </html>
