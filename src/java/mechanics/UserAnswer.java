@@ -21,4 +21,12 @@ public class UserAnswer extends Answer{
         return username;
     }
     
+    @Override
+    public void scoreGussers(){
+        for(User u : gusssers){
+//            a user answer is always one meant or fooling
+            username.addScore(vars.Vars.SCORE_FOR_FOOLING);
+        }
+    }
+    
 }

@@ -50,8 +50,8 @@ public class Question {
         return answers;
     }
 
-    public void scoreAnswers(Set<Answer> answers) {
-        for (Answer a : answers) {
+    public void scoreAnswers() {
+        for (Answer a : getAnswers()) {
             if (a.getAnswer().equals(rightAnswer.getAnswer())) {
                 rightAnswer.setGusssers(a.getGusssers());
             } else {
@@ -61,6 +61,7 @@ public class Question {
                     }
                 }
             }
+            a.scoreGussers();
         }
     }
 

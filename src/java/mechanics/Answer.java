@@ -44,5 +44,12 @@ public class Answer {
     public void addGussser(User userName) {
         this.gusssers.add(userName);
     }
+    
+    public void scoreGussers(){
+        for(User u : gusssers){
+//            a non-UserAnswer is always the right answer
+            u.addScore(vars.Vars.SCORE_FOR_RIGHT_ANSWER);
+        }
+    }
 
 }
