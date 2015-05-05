@@ -32,11 +32,12 @@
             <input type="submit" value="Submit" />
         </form>
         <%} else {
-                ((Question) application.getAttribute(Vars.CURRENTQ)).addAnswer(new UserAnswer(request.getParameter("answer"), (User) session.getAttribute(Vars.USER)));
-            }%>
-            <script>
-                window.location = "chooseAnswer.jsp"
-            </script>
+            ((Question) application.getAttribute(Vars.CURRENTQ)).addAnswer(new UserAnswer(request.getParameter("answer"), (User) session.getAttribute(Vars.USER)));
+        %><script>
+            window.location = "chooseAnswer.jsp"
+        </script>
+        <%}%>
+
         <%
             }
         %>

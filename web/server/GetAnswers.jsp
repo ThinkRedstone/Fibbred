@@ -59,7 +59,7 @@
                     countdown();
                 }, 1000);
                 setTimeout(function () {
-                    window.location = "../ScoreAnswers.jsp";
+                    window.location = "ScoreAnswers.jsp";
                 }
                 , (time + 1) * 1000);
             </script>
