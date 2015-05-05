@@ -16,7 +16,7 @@
     </head>
     <body>
         <% if (request.getParameter("username") == null || request.getParameter("username").equals("")) {%>
-        <form action="login.jsp">
+        <form action="Login.jsp">
             <input type="text" name="username" value="" />
             <input type="submit" value="Enter" />
         </form>
