@@ -27,6 +27,7 @@ public class Question {
     }
 
     public Question(String question, Answer rightAnswer) {
+        userAnswers = new HashSet<>();
         this.question = question;
         this.rightAnswer = rightAnswer;
     }
