@@ -33,7 +33,7 @@
         <h1><%=((Question) application.getAttribute(vars.Vars.CURRENTQ)).question%></h1> 
         <div id="time" style="text-align: center"></div>
         <script>
-            var time = 15;
+            var time = 60;
             function countdown() {
                 document.getElementById("time").innerHTML = time;
                 time--;
