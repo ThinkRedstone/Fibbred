@@ -18,19 +18,19 @@ import mechanics.Question;
  * @author thinkredstone
  */
 public class QuestionLoader {
+
     private Scanner s;
 
     public QuestionLoader() throws FileNotFoundException {
-        s = new Scanner(new File(""));//TODO: use a real file
+        s = new Scanner(new File("/home/thinkredstone/ques.txt"));//TODO: use a real file
     }
-    
-    public Set<Question> loadQuestions(){
+
+    public Set<Question> loadQuestions() {
         Set<Question> questions = new HashSet<>();
-        while(s.hasNextLine()){
-            questions.add(new Question(s.nextLine(),new Answer(s.nextLine())));
+        while (s.hasNextLine()) {
+            questions.add(new Question(s.nextLine(), new Answer(s.nextLine())));
         }
         return questions;
     }
-    
-    
+
 }

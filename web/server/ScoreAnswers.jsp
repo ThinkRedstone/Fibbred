@@ -14,7 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Score</title>
     </head>
-    <body style="text-align: center">
+    <body style="text-align: center;direction: rtl">
         <h1>The score: </h1>
         <table>
             <%

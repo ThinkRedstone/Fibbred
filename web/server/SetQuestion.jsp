@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
     </head>
-    <body style="text-align: center">
+    <body style="text-align: center;direction: rtl">
         <%
             if (application.getAttribute(Vars.QUESTIONS) == null) {
                 QuestionLoader ql = new QuestionLoader();
@@ -26,10 +26,11 @@
                 if (!q.isPlayed()) {
                     q.setPlayed(true);
                     application.setAttribute(Vars.CURRENTQ, q);
+                    break;
                 }
         %> 
-        <h1><%=q.question%></h1> 
         <% }%>
+        <h1><%=((Question) application.getAttribute(vars.Vars.CURRENTQ)).question%></h1> 
         <div id="time" style="text-align: center"></div>
         <script>
             var time = 15;
@@ -41,7 +42,7 @@
                 countdown();
             }, 1000);
             setTimeout(function () {
-            window.location = "GetAnswers.jsp"; 
+                window.location = "GetAnswers.jsp";
             }
             , (time + 1) * 1000);
         </script>
